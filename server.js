@@ -23,6 +23,7 @@ mongoose.connect("mongodb+srv://kurikaraalex:Kurikara1@alexkuri.iqfaviw.mongodb.
 const gallerySchema = new mongoose.Schema({
     title: String,
     description: String,
+    photographerName: String,
     imageUrl: String
 });
 const Gallery = mongoose.model("Gallery", gallerySchema);

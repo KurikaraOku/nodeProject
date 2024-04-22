@@ -779,13 +779,13 @@ body {
   display: none; 
 }
 #galleryContainer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 40px;
-  padding: 20px;
+  display: flex;        
+  flex-wrap: wrap;      
+  justify-content: center; 
+  align-items: center;  
+  gap: 20px;          
+  padding: 20px;      
 }
-
 .gallery-item {
   border: 1px solid #ccc;
   margin-bottom: 16px;

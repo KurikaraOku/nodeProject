@@ -48,3 +48,7 @@ function previewImage() {
         fileReader.readAsDataURL(file[0]);
     }
 }
+
+document.getElementById('addPostBtn').addEventListener('click', function() {
+    $('#uploadModal').modal('show'); // Force showing the upload modal
+});
