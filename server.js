@@ -30,7 +30,7 @@ const Gallery = mongoose.model("Gallery", gallerySchema);
 
 // Multer setup for image upload
 const storage = multer.diskStorage({
-    destination: path.join(__dirname, 'public', 'uploads'), // Absolute path to the uploads directory
+    destination: path.join(__dirname, 'public', 'uploads'),  
     filename: (req, file, cb) => {
         cb(null, Date.now() + path.extname(file.originalname));
     }
@@ -68,12 +68,16 @@ app.get("/api/gallery", async (req, res) => {
 });
 
 app.post("/api/gallery", upload.single("image"), async (req, res) => {
+    console.log("Received body: ", req.body);
+    console.log("Received file: ", req.file);
+
     const { error } = validateGallery(req.body);
     if (error) return res.status(400).send(error.details[0].message);
 
     const newItem = new Gallery({
         title: req.body.title,
         description: req.body.description,
+        photographerName: req.body.photographerName,
         imageUrl: req.file ? `/uploads/${req.file.filename}` : 'default.jpg'
     });
 
@@ -85,6 +89,7 @@ app.post("/api/gallery", upload.single("image"), async (req, res) => {
         res.status(500).send("Error saving gallery item: " + err.message);
     }
 });
+
 
 app.listen(3002, () => {
     console.log("Server successfully running on port 3002.");

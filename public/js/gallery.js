@@ -15,6 +15,7 @@ function displayGalleryItems(items) {
             <h3>${item.title}</h3>
         `;
 
+        // attach event listener for showing details
         itemElement.onclick = () => {
             showDetails(item);
         };
@@ -23,32 +24,79 @@ function displayGalleryItems(items) {
     });
 }
 
-
+// function to show details of a gallery item
 function showDetails(item) {
-    const modalBody = document.querySelector('.modal-body');
-    modalBody.innerHTML = `
+    const detailModalBody = document.querySelector('#detailModal .modal-body');
+    detailModalBody.innerHTML = `
         <h5>${item.title}</h5>
         <img src="${item.imageUrl}" alt="${item.title}" class="img-fluid mb-2">
         <p>${item.description}</p>
         <p>Taken by: ${item.photographerName}</p>
     `;
-    $('#uploadModal').modal('show');
+    $('#detailModal').modal('show');
 }
 
+// preview image function for the upload form
 function previewImage() {
-    var file = document.getElementById("imageUpload").files;
-    if (file.length > 0) {
+    var fileInput = document.getElementById("imageUpload");
+    var file = fileInput.files[0];
+    if (file) {
         var fileReader = new FileReader();
-
-        fileReader.onload = function(event) {
-            document.getElementById("imagePreview").setAttribute("src", event.target.result);
-            document.getElementById("imagePreview").style.display = "block";
+        fileReader.onloadend = function(e) {
+            var imagePreview = document.getElementById("imagePreview");
+            imagePreview.src = e.target.result;
+            imagePreview.style.display = 'block';
         };
-
-        fileReader.readAsDataURL(file[0]);
+        fileReader.readAsDataURL(file);
     }
 }
 
+// button to show the upload modal with a clean state
 document.getElementById('addPostBtn').addEventListener('click', function() {
-    $('#uploadModal').modal('show'); // Force showing the upload modal
+    document.getElementById('uploadForm').reset();
+    document.getElementById('imagePreview').style.display = 'none';
+    $('#uploadModal').modal('show'); 
 });
+
+// handle form submission for new gallery items
+document.getElementById('uploadForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+
+    fetch('/api/gallery', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            addPostToGallery(data.post);
+            $('#uploadModal').modal('hide');
+            this.reset();
+            document.getElementById('imagePreview').style.display = 'none';
+        } else {
+            alert('Failed to upload: ' + data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error uploading file:', error);
+        alert('Error uploading file.');
+    });
+});
+
+// add a new post to the gallery 
+function addPostToGallery(post) {
+    const container = document.getElementById('galleryContainer');
+    const itemElement = document.createElement('div');
+    itemElement.className = 'polaroid';
+    itemElement.innerHTML = `
+        <img src="${post.imageUrl}" alt="${post.title}" style="width:100%;">
+        <h3>${post.title}</h3>
+    `;
+
+    itemElement.onclick = () => {
+        showDetails(post);
+    };
+
+    container.appendChild(itemElement);
+}
