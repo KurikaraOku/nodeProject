@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Artistic Sneaker Display",
+        "description": "A captivating display of various sneaker designs.",
+        "imageUrl": "/uploads/j1.jpg"
+    },
+    {
+        "title": "Vintage Collection",
+        "description": "Rare sneakers from the 90s.",
+        "imageUrl": "/uploads/j2.jpg"
+    }
+]
