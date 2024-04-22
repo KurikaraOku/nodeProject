@@ -43,9 +43,9 @@ body {
 /* General styles for icons in the menu */
 .menu-icons i {
   font-size: 24px; /* Increase the size of icons */
-  margin-right: 15px; /* Right margin for spacing */
-  color: #ffffff; /* Change color for better visibility */
-  transition: color 0.3s; /* Smooth color transition on hover */
+  margin-right: 15px; 
+  color: #ffffff; 
+  transition: color 0.3s; /
 }
 
 /* Hover effects for icons */
@@ -60,17 +60,17 @@ body {
 }
 /* Ensuring icons are vertically centered with any text links */
 .menu-icons a {
-  display: flex; /* Use flexbox for alignment */
-  align-items: center; /* Align items vertically */
-  justify-content: center; /* Center content horizontally in the flex container */
-  text-decoration: none; /* Remove underline from links */
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  text-decoration: none; 
 }
 
 /* Additional padding and interaction styles for links */
 .menu-icons a {
-  padding: 5px 10px; /* Padding around links for larger clickable area */
-  border-radius: 5px; /* Rounded corners for aesthetic */
-  transition: background-color 0.3s; /* Smooth background color transition on hover */
+  padding: 5px 10px; 
+  border-radius: 5px; 
+  transition: background-color 0.3s;
 }
 
 .menu-icons i {
@@ -86,24 +86,24 @@ body {
 .custom-link {
   display: inline-block;
   padding: 12px 20px; /* Increased padding for a better click area */
-  background-color: #007bff; /* Vibrant blue, you can choose any color that fits your design */
-  color: #ffffff; /* White text for contrast */
-  text-decoration: none; /* Removes underline from the link */
-  border-radius: 5px; /* Rounded corners */
-  margin-right: 10px; /* Space between buttons */
-  margin-bottom: 40px; /* Additional space below the button */
+  background-color: #007bff; /
+  color: #ffffff;
+  text-decoration: none; 
+  border-radius: 5px; 
+  margin-right: 10px; 
+  margin-bottom: 40px; 
   text-align: center;
-  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transitions for hover effects */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Subtle shadow for 3D effect */
-  font-weight: bold; /* Makes the font bold */
-  letter-spacing: 0.05em; /* Adds spacing between letters */
+  transition: background-color 0.3s, box-shadow 0.3s; 
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-weight: bold; 
+  letter-spacing: 0.05em; 
 }
 
 .custom-link:hover, .custom-link:focus {
-  background-color: #0056b3;/* Darker shade of button color for hover effect */
-  color: #ffffff; /* Ensures text color remains consistent on hover */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Increased shadow for lifted effect */
-  text-decoration: none; /* Ensures text decoration does not change on hover */
+  background-color: #0056b3;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  text-decoration: none; 
 }
 
 .getStarted {
@@ -189,12 +189,12 @@ body {
 
 /* General styling for the checkout page */
 #login-header {
-  max-width: 600px; /* Limits the width of the form for better readability */
-  margin: 0 auto; /* Centers the form on the page */
+  max-width: 600px; 
+  margin: 0 auto; 
   padding: 20px;
-  background-color: #f4f4f4; /* Light grey background */
-  border-radius: 8px; /* Rounded corners for the form */
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  background-color: #f4f4f4; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
 
 /* Styles for header elements within the form */
@@ -326,12 +326,12 @@ button[type="submit"] {
 }
 .inventoryproduct-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for better fitting */
-  gap: 20px; /* Spacing between grid items */
-  padding: 20px; /* Padding around the grid container */
-  justify-content: center; /* Center grid items horizontally if there's extra space */
-  align-items: center; /* Align items vertically */
-  justify-items: center; /* Center align each item within its cell */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+  gap: 20px; 
+  padding: 20px;
+  justify-content: center; 
+  align-items: center; 
+  justify-items: center; 
 }
 .inventoryproduct-container img {
     width: 200px;
@@ -759,7 +759,7 @@ body {
 .modal-content {
   background: #fff;
   padding: 20px;
-  border-radius: 8px; /* Optional rounded corners */
+  border-radius: 8px; 
 }
 
 .modal-body {
@@ -781,10 +781,9 @@ body {
 #galleryContainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center; /* Centers items on the line */
-  align-items: center; /* Optional, align items vertically */
-  gap: 40px; /* Space between items */
-  padding: 20px; /* Padding around the entire container */
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
 }
 
 .gallery-item {
