@@ -34,3 +34,17 @@ function showDetails(item) {
     `;
     $('#uploadModal').modal('show');
 }
+
+function previewImage() {
+    var file = document.getElementById("imageUpload").files;
+    if (file.length > 0) {
+        var fileReader = new FileReader();
+
+        fileReader.onload = function(event) {
+            document.getElementById("imagePreview").setAttribute("src", event.target.result);
+            document.getElementById("imagePreview").style.display = "block";
+        };
+
+        fileReader.readAsDataURL(file[0]);
+    }
+}

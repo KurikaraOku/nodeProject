@@ -28,7 +28,7 @@
                     </div>
                     <div class="logo"></div>
                     <div class="menu-items">
-                        <a href="#" class="menu-item">Home</a>
+                        <a href="index.html" class="menu-item">Home</a>
                         <a href="inventory.html" class="menu-item">Inventory</a>
                         <a href="newarrivals.html" class="menu-item">New Arrivals</a>
                         <a href="gallery.html" class="menu-item">Gallery</a>
@@ -58,29 +58,37 @@
 
 
     <!-- Upload Modal -->
-    <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="uploadModalLabel">Gallery</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form id="uploadForm" enctype="multipart/form-data">
+<div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="uploadModalLabel">Upload Image</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    <div class="form-group">
                         <label for="imageUpload">Image:</label>
-                        <input type="file" id="imageUpload" name="image" required>
+                        <input type="file" id="imageUpload" name="image" required onchange="previewImage();">
+                        <img id="imagePreview" src="#" alt="Image Preview" class="img-fluid mt-3" style="display: none; max-height: 200px;">
+                    </div>
+                    <div class="form-group">
                         <label for="photographerName">Username:</label>
-                        <input type="text" id="photographerName" name="photographerName" placeholder="Photographer's Name" required>
+                        <input type="text" id="photographerName" class="form-control" name="photographerName" placeholder="Username." required>
+                    </div>
+                    <div class="form-group">
                         <label for="caption">Caption:</label>
-                        <textarea id="caption" name="caption" placeholder="Enter a caption" required></textarea>
-                        <button type="submit" class="btn btn-primary">Upload</button>
-                    </form>
-                </div>
+                        <textarea id="caption" class="form-control" name="caption" placeholder="Enter a caption." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Upload</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
+
 
     <!-- Detail View Modal -->
     <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">

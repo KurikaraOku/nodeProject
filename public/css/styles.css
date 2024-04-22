@@ -755,6 +755,21 @@ body {
   display: block; 
   margin: 0 auto 10px; 
 }
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px; /* Optional rounded corners */
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
 #message-response {
   color: #28a745;  
   background-color: #dff0d8; /* light green background */
@@ -762,6 +777,14 @@ body {
   padding: 10px;
   border-radius: 5px;
   display: none; 
+}
+#galleryContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centers items on the line */
+  align-items: center; /* Optional, align items vertically */
+  gap: 40px; /* Space between items */
+  padding: 20px; /* Padding around the entire container */
 }
 
 .gallery-item {
